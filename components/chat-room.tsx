@@ -108,7 +108,7 @@ export function ChatRoom() {
   if (!isJoined) {
     return (
       <div className="flex items-center justify-center min-h-[60vh]">
-        <Card className="neo-depth p-8 w-full max-w-md">
+        <Card className="shadow-lg shadow-black/60 border border-white/5 p-8 w-full max-w-md">
           <div className="text-center mb-6">
             <Users className="w-12 h-12 mx-auto mb-4 text-primary" />
             <h2 className="text-2xl font-mono font-bold mb-2">Join MMS Chat</h2>
@@ -119,10 +119,14 @@ export function ChatRoom() {
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && handleJoin()}
-              className="neo-depth-subtle"
+              className="shadow-md shadow-black/40 border border-white/5"
               maxLength={50}
             />
-            <Button onClick={handleJoin} disabled={!username.trim()} className="w-full neo-depth">
+            <Button
+              onClick={handleJoin}
+              disabled={!username.trim()}
+              className="w-full shadow-lg shadow-black/60 border border-white/5"
+            >
               Join Chat
             </Button>
           </div>
@@ -134,7 +138,7 @@ export function ChatRoom() {
   return (
     <div className="flex flex-col h-[70vh]">
       {/* Chat Header */}
-      <div className="neo-depth p-4 mb-4 rounded-lg">
+      <div className="shadow-lg shadow-black/60 border border-white/5 p-4 mb-4 rounded-lg">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Users className="w-5 h-5 text-primary" />
@@ -147,7 +151,7 @@ export function ChatRoom() {
       </div>
 
       {/* Messages Area */}
-      <Card className="neo-depth-inset flex-1 p-4 overflow-hidden">
+      <Card className="shadow-inner shadow-black/50 border border-white/5 flex-1 p-4 overflow-hidden">
         <div className="h-full overflow-y-auto space-y-3">
           {messages.length === 0 ? (
             <div className="text-center text-muted-foreground py-8">
@@ -186,11 +190,15 @@ export function ChatRoom() {
             placeholder="Type your message..."
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="neo-depth-subtle flex-1"
+            className="shadow-md shadow-black/40 border border-white/5 flex-1"
             disabled={isLoading}
             maxLength={500}
           />
-          <Button type="submit" disabled={!message.trim() || isLoading} className="neo-depth px-4">
+          <Button
+            type="submit"
+            disabled={!message.trim() || isLoading}
+            className="shadow-lg shadow-black/60 border border-white/5 px-4"
+          >
             <Send className="w-4 h-4" />
           </Button>
         </div>
