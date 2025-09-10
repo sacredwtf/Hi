@@ -49,7 +49,7 @@ export function LandingPage({ onReveal }: LandingPageProps) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-pulse text-2xl font-mono text-muted-foreground">Access Granted...</div>
+          <div className="animate-pulse text-2xl font-mono text-muted-foreground">jayden is bisexual...</div>
         </div>
       </div>
     )
