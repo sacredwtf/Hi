@@ -184,7 +184,7 @@ export function ChatRoom() {
       </Card>
 
       {/* Message Input */}
-      <form onSubmit={handleSendMessage} className="mt-4">
+      <form onSubmit={handleSendMessage} className="mt-4 pt-4 border-t border-white/10">
         <div className="flex gap-2">
           <Input
             placeholder="Type your message..."
